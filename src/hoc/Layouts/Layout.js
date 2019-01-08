@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-import classes from './Layout.css';
+import Aux from '../Aux/Aux';
+import classes from './Layout.css'
+import Toolbar from '../../components/Toolbar/Toolbar'
+import Search from '../../components/Search/Search'
 
 class Layout extends Component {
     state = {
@@ -16,13 +19,15 @@ class Layout extends Component {
     }
 
     render(){
+        console.log(classes)
         return(
-            // <Aux>
-            //     <Toolbar toggle={this.sideDrawerOpenedHandler}/>
+            <Aux>
+                <Toolbar toggle={this.sideDrawerOpenedHandler}/>
+                <Search/>
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
-            //</Aux>
+            </Aux>
         );
     }
 }
