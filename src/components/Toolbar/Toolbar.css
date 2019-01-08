@@ -1,35 +1,93 @@
-.Toolbar{
+.Toolbar {
+  height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, #195598, #1f757b, #22985c);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+}
+
+.Toolbar nav {
+  height: 100%;
+}
+
+.Title {
+  color: white;
+  font-weight: 900;
+  font-size: 15pt;
+  margin: auto;
+}
+
+@media (min-width: 500px) {
+  .Toolbar {
     height: 100px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-image: linear-gradient(90deg, #195598,#185994,#18965d, #199a59);
+    background-image: linear-gradient(
+      90deg,
+      #195598,
+      #185994,
+      #18965d,
+      #199a59
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
-}
+  }
 
-.Toolbar nav{
+  .Toolbar nav {
     height: 100%;
-}
+  }
 
-.Title{
+  .Title {
     color: white;
     font-weight: 900;
     font-size: 20pt;
     margin: auto;
+  }
 }
 
-.Logo{
-    height: 80%;
-}
-
-@media (max-width: 499px){
-    .DesktopOnly{
-        display: none;
+@media (min-width: 1000px) {
+    .Toolbar {
+      height: 100px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        90deg,
+        #195598,
+        #185994,
+        #18965d,
+        #199a59
+      );
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 90;
     }
-}
+  
+    .Toolbar nav {
+      height: 100%;
+    }
+  
+    .Title {
+      color: white;
+      font-weight: 900;
+      font-size: 20pt;
+      margin: auto;
+    }
+  }

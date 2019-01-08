@@ -1,20 +1,90 @@
-.Search{
-    margin-top: 100px;
-    display: block;
+.Search {
+  margin-top: 65px;
+  display: block;
 }
 
-.InputDiv{
-    padding: 10px;
-    width: 100%;
-    height: 30px;
+.inputGroup {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 15px;
+  width: 100%;
+  margin: auto;
+  height: 68px;
 }
+.inputGroup > div {
+  display: table-cell;
+  border: 1px solid #adadad;
+  margin-left: 5px;
+  vertical-align: middle; /* needed for Safari */
+  text-align: center;
+}
+.inputGroupIcon {
+  background: #23995c;
+  color: white;
+  padding: 0 8px;
+  border: none !important;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16pt;
+}
+.inputGroupArea {
+  width: 100%;
+}
+.inputGroup input {
+  border: 0;
+  display: block;
+  width: 94%;
+  padding: 8px;
+}
+input:focus {
+  outline: none;
+}
+@media (min-width: 500px) {
+  .Search {
+    margin-top: 110px;
+  }
+  .inputGroup {
+    height: 80px;
+  }
+  .inputGroup input {
+    height: 100%;
+    font-size: 14pt;
+  }
 
-.InputDiv > input{
+  .inputGroup {
+    width: 95%;
+  }
+  .inputGroupArea {
     width: 93%;
-    margin: 5px; 
-    height: 100%;
+  }
+  .inputGroupIcon {
+    font-size: 21pt;
+  }
 }
 
-.InputDiv > button{
-    height: 100%;
+@media (min-width: 1000px) {
+  .inputGroupArea {
+    width: 94%;
+  }
+  .inputGroup input {
+    width: 98%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inputGroupArea {
+    width: 96%;
+  }
+  .inputGroup input {
+    width: 98%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .inputGroupArea {
+    width: 97%;
+  }
+  .inputGroup input {
+    width: 98.5%;
+  }
 }

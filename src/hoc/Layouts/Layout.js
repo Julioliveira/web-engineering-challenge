@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Aux from '../Aux/Aux';
+import Aux from '../Auxiliar/Auxiliar'
 import classes from './Layout.css'
 import Toolbar from '../../components/Toolbar/Toolbar'
 import Search from '../../components/Search/Search'
