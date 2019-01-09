@@ -14,12 +14,14 @@
 .inputGroup > div {
   display: table-cell;
   border: 1px solid #adadad;
+  border-radius: 3px;
   margin-left: 5px;
   vertical-align: middle; /* needed for Safari */
   text-align: center;
 }
 .inputGroupIcon {
   background: #23995c;
+  box-shadow: #adadad 1px 1px 5px;
   color: white;
   padding: 0 8px;
   border: none !important;
