@@ -3,15 +3,28 @@ import WasteItem from './WasteItem/WasteItem'
 import classes from './WasteItemList.css'
 
 const wasteItemList = (props) => {
+    
     let items = props.list.map((item, index) => {
-        return <WasteItem key={item.id ? item.id : index} item={item} click={() => props.favoriteHandler(item.id)} />
+        return <WasteItem key={item.id ? item.id : index} item={item} 
+                    click={() => {
+                            if (props.title || item.favorite)
+                                props.removeFavoriteHandler(item.id)
+                            else 
+                                props.addFavoriteHandler(item.id)
+                        }} />
     })
     let title = null
-    if (props.title)
+    let backgroundClasses = [classes.WasteItemList]
+    if (props.title){
         title = <div className={classes.Title}>{props.title}</div>
-
+        backgroundClasses.push(classes.GreenBackground)
+        backgroundClasses.push(classes.Open)
+    }
+    if(props.list.length < 1)
+        backgroundClasses.push(classes.Close)
+    
     return (
-        <div className={classes.WasteItemList}>
+        <div className={backgroundClasses.join(' ')}>
             {title}
             {items}
         </div>

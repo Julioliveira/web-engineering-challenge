@@ -1,6 +1,6 @@
 .WasteItem{
     margin: auto;
-    width: 100%
+    width: 90%;
 }
 .Star{
     font-size: 12pt;
@@ -8,4 +8,23 @@
 }
 .Green{
     color: #23995c;
+}
+ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media(min-width: 700px){
+    .LeftDiv{
+        width: 40%;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .RightDiv{
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+    }
 }

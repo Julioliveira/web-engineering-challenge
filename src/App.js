@@ -34,24 +34,36 @@ class App extends Component {
         "title": "Blue Bin (molded paper)",
         "keywords": "molded paper, paper egg cartons, paper take-out coffee trays, paper berry boxes"
       }
-    ]
+    ],
+    favorites: []
   }
 
-  favoriteHandler = (id) => {
+  addFavoriteHandler = (id) => {
+    let favorites = this.state.favorites
     let items = this.state.items
     let index = items.findIndex(item => item.id === id)
     items[index].favorite = !items[index].favorite
-    this.setState({ list: items })
+    favorites.push(items[index])
+    this.setState({ favorites: favorites })
   }
 
+  removeFavoriteHandler =(id) =>{
+    let favorites = this.state.favorites
+    let items = this.state.items
+    let index = favorites.findIndex(item => item.id === id)
+    let indexItem = items.findIndex(item => item.id === id)
+    items[indexItem].favorite = !items[indexItem].favorite
+    favorites.splice(index, 1)
+    this.setState({favorites:favorites, list: items})
+  }
   
   render() {
     let itemsFiltered = this.state.items
     return (
       <Layout>
 
-        <WasteItemList list={itemsFiltered} favoriteHandler={this.favoriteHandler} title="Favourites" />
-        <WasteItemList list={itemsFiltered.filter(item => item.favorite)} favoriteHandler={this.favoriteHandler} title="Favourites" />
+        <WasteItemList list={itemsFiltered} addFavoriteHandler={this.addFavoriteHandler} removeFavoriteHandler={this.removeFavoriteHandler}/>
+        <WasteItemList list={this.state.favorites} addFavoriteHandler={this.addFavoriteHandler} removeFavoriteHandler={this.removeFavoriteHandler} title="Favourites" />
         {/* <WasteItem item={this.state.item} click={()=>this.favoriteHandler(this.state.item)}/> */}
       </Layout>
     );
