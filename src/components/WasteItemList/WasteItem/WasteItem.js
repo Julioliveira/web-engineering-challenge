@@ -19,7 +19,7 @@ const wasteItem = (props)=>{
 
     return(
         <div className={classes.WasteItem}>
-            <div className={classes.LeftDiv} onClick={click} ><FontAwesomeIcon icon={faStar} className={starClass.join(' ')}/> {title}</div>
+            <div className={classes.LeftDiv} ><FontAwesomeIcon icon={faStar} onClick={click} className={starClass.join(' ')}/> {title}</div>
             <div className={classes.RightDiv}  dangerouslySetInnerHTML={{__html: description}} style={{textAlign: "justify"}}>
                 </div>
         </div>

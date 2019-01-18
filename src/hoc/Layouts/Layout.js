@@ -11,7 +11,8 @@ class Layout extends Component {
     }
     searchValueHandler = (event)=>{
         this.setState({searchString: event.target.value})
-        console.log(this.state)
+        if(event.target.value === "")
+            this.props.search(event.target.value)
     }
     handleKeyPress = (event) =>{
         if(event.key === 'Enter'){
