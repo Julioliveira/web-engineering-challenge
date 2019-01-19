@@ -9,7 +9,11 @@ const search = (props) => (
 
         <div className={classes.inputGroup}>
             <div className={classes.inputGroupArea}>
-                <input type="text" onChange={props.searchValueHandler} onKeyPress={props.handleKeyPress} />
+                <input 
+                    type="text" 
+                    onChange={props.searchValueHandler} 
+                    onKeyPress={props.handleKeyPress} 
+                    placeholder="Search here"/>
             </div>
             <div 
                 className={classes.inputGroupIcon} 
