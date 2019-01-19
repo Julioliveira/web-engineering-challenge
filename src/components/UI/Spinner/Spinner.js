@@ -1,8 +1,12 @@
 import React from 'react'
 import classes from './Spinner.css'
+import TrashIcon from '../Icons/TrashCan/TrashCan'
 
 const spinner = () => (
-    <div className={classes.lds_hourglass}></div>
+    <div className={classes.spinner}>
+    <TrashIcon spin={true}/>
+
+    </div>
 );
 
 export default spinner

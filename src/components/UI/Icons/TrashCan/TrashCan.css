@@ -1,0 +1,100 @@
+.trashDiv{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .trashDiv .trashLid{
+    background-color: blue;
+    width: 62%;
+    height: 10%;
+    position: absolute;
+    left: 50%;
+    margin-left: -31%;
+    top: 18%;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    transform: rotate(-5deg);
+  }
+  .trashDiv .trashLid:after{
+    content: "";
+    background-color: inherit;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    margin-top: -9%;
+    margin-left: -13%;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    transform: rotate(-1deg);
+    
+  }
+  .trashDiv .can{
+    background-color: blue;
+    width: 55%;
+    height: 55%;
+    left: 50%;
+    margin-left:-27%;
+    bottom: 10%;
+    border-radius: 0 0 20% 20%;
+    position: absolute;
+  }
+  .trashDiv .can:after{
+    content: "";
+    background-color: inherit;
+    width: 110%;
+    height:20%;
+    position: absolute;
+    margin-top: -8%;
+    margin-left: -55%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+  }
+  .trashDiv .trashLine1 {
+    width: 6%;
+    height: 70%;
+    position: absolute;
+    left: 30%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #0000B9;
+    border-radius: 20%;
+  }
+  
+  .trashDiv .trashLine2 {
+    width: 6%;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #0000B9;
+    border-radius: 20%;
+  }
+  
+  .trashDiv .trashLine3 {
+    width: 6%;
+    height: 70%;
+    position: absolute;
+    left: 70%;
+    margin-left: -2%;
+    bottom: 17%;
+    background-color: #0000B9;
+    border-radius: 20%;
+  }
+.spin{
+    animation: spin 3s infinite;
+}
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(540deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1080deg);
+    }
+  }
