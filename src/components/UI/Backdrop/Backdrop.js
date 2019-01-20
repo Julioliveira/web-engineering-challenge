@@ -2,8 +2,15 @@ import React from 'react'
 import classes from './Backdrop.css'
 import Spinner from '../Spinner/Spinner'
 
-const backdrop = (props) =>(
-    props.show ? <div className={classes.Backdrop} onClick={props.clicked}><Spinner/></div> : null
-);
+const backdrop = (props) =>{
+    if (props.show) 
+        return (
+        <div className={classes.Backdrop} onClick={props.clicked}> 
+        {props.loader? <Spinner/> : null}
+        </div> 
+        )
+        else 
+        return null
+};
 
 export default backdrop

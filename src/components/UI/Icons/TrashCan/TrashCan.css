@@ -5,7 +5,7 @@
     overflow: hidden;
   }
   .trashDiv .trashLid{
-    background-color: blue;
+    background-color: #195598;
     width: 62%;
     height: 10%;
     position: absolute;
@@ -30,7 +30,7 @@
     
   }
   .trashDiv .can{
-    background-color: blue;
+    background-color: #195598;
     width: 55%;
     height: 55%;
     left: 50%;
@@ -57,7 +57,7 @@
     left: 30%;
     margin-left: -2%;
     bottom: 17%;
-    background-color: #0000B9;
+    background-color: #07478e;
     border-radius: 20%;
   }
   
@@ -68,7 +68,7 @@
     left: 50%;
     margin-left: -2%;
     bottom: 17%;
-    background-color: #0000B9;
+    background-color: #07478e;
     border-radius: 20%;
   }
   
@@ -79,7 +79,7 @@
     left: 70%;
     margin-left: -2%;
     bottom: 17%;
-    background-color: #0000B9;
+    background-color: #07478e;
     border-radius: 20%;
   }
 .spin{

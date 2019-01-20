@@ -3,13 +3,17 @@ import Layout from './hoc/Layouts/Layout';
 import WasteItemList from './components/WasteItemList/WasteItemList'
 import Backdrop from './components/UI/Backdrop/Backdrop'
 import axios from './services/axios-waste'
-
+import Modal from './components/UI/Modal/Modal'
+import classes from './App.css'
 class App extends Component {
   state = {
     list: [],
     favorites: [],
     items: [],
-    loading: false
+    loading: false,
+    showModal: false,
+    modalTitle: "",
+    modalText: ""
   }
 
   getJson = (text) => {
@@ -29,10 +33,18 @@ class App extends Component {
         return item
       })
       let list = items.filter(item => {
-        let returnit = item.keywords.toUpperCase().includes(text.toUpperCase())
-        return returnit
+        let keywords = item.keywords.split(', ')
+        let found = keywords.filter(v => v.toUpperCase().includes(text.toUpperCase()))
+        return found.length > 0
       })
+      if(list.length === 0){
+        this.setState({
+          modalTitle: "No Results",
+          modalText: "This search result is empty. No matching keyword found.",
+          showModal: true,
 
+        })
+      }
       this.setState({ items: items, list: list })
       this.setState({ loading: false })
     }).catch(error => {
@@ -60,11 +72,18 @@ class App extends Component {
     favorites.splice(index, 1)
     this.setState({ favorites: favorites, list: items })
   }
-
+  modalClosedHandler = () =>{
+    this.setState({showModal: false})
+  }
   render() {
     return (
       <Layout search={this.getJson}>
-        <Backdrop show={this.state.loading} />
+        <Backdrop show={this.state.loading} loader={true} />
+        <Modal show={this.state.showModal} modalClosed={this.modalClosedHandler}>
+                    <div 
+                      className={classes.ModalTitle}><strong> {this.state.modalTitle}</strong><br/></div>
+                    {this.state.modalText}
+        </Modal>
         <WasteItemList list={this.state.list} addFavoriteHandler={this.addFavoriteHandler} removeFavoriteHandler={this.removeFavoriteHandler} />
         <WasteItemList list={this.state.favorites} addFavoriteHandler={this.addFavoriteHandler} removeFavoriteHandler={this.removeFavoriteHandler} title="Favourites" />
       </Layout>
