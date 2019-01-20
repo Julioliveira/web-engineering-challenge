@@ -5,7 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const wasteItem = (props)=>{
     let title = props.item.title
-    let description = props.item.body.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;nbsp;/g, " ")
+    let description = props.item.body.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;nbsp;/g, " ").replace(/&quot;/g, "'")
     if(description.indexOf('<ul>') === -1){
         description = '<ul><li>'+description+'</li></ul>'
     }
